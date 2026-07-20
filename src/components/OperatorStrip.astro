@@ -1,0 +1,71 @@
+<div class="operator-strip" aria-label="Platform owner">
+  <div class="operator-kicker">Owner / Maintainer</div>
+  <div class="operator-main">
+    <strong>Ruben Velazquez Flores</strong>
+    <span>Software engineer with 5 years of experience operating this personal platform engineering project.</span>
+  </div>
+</div>
+
+<style>
+  .operator-strip {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    width: min(100%, 860px);
+    max-width: 100%;
+    margin-bottom: 24px;
+    border: 1px solid var(--text);
+    background: var(--surface);
+    box-shadow: 6px 6px 0 var(--border-strong);
+  }
+
+  .operator-kicker,
+  .operator-main {
+    display: flex;
+    align-items: center;
+    min-height: 58px;
+  }
+
+  .operator-kicker {
+    background: var(--text);
+    color: var(--bg);
+    padding: 0 14px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .operator-main {
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    border-left: 1px solid var(--text);
+    padding: 10px 16px;
+  }
+
+  .operator-main strong {
+    color: var(--text);
+    font-size: clamp(17px, 2vw, 24px);
+    letter-spacing: -0.06em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .operator-main span {
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 680px) {
+    .operator-strip {
+      grid-template-columns: 1fr;
+      box-shadow: 4px 4px 0 var(--border-strong);
+    }
+
+    .operator-main {
+      border-left: 0;
+      border-top: 1px solid var(--text);
+    }
+  }
+</style>

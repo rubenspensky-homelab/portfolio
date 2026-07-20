@@ -1,0 +1,102 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Resume | Homelab Platform Control Plane">
+  <section class="section page-hero">
+    <div class="shell resume-grid">
+      <div>
+        <p class="eyebrow">/resume</p>
+        <h1>Platform Engineering Resume</h1>
+      </div>
+      <div class="panel resume-panel">
+        <p class="terminal-label">profile</p>
+        <h2>Ruben Velazquez Flores</h2>
+        <p class="summary">
+          Software engineer with 5 years of experience, focused on platform engineering, Kubernetes operations,
+          infrastructure automation and production-style observability.
+        </p>
+        <p class="terminal-label">focus areas</p>
+        <ul>
+          <li>Kubernetes platform engineering</li>
+          <li>Infrastructure as Code with Terraform and Ansible</li>
+          <li>GitOps delivery and platform automation</li>
+          <li>Observability with Grafana, Prometheus, Loki and Tempo</li>
+          <li>Cloud and edge infrastructure with AWS and Cloudflare</li>
+        </ul>
+        <a href="https://www.linkedin.com/in/rubenvelazquezflores" target="_blank" rel="noreferrer">LinkedIn Profile</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    min-height: calc(100vh - 64px);
+    border-top: 0;
+    padding-top: 72px;
+  }
+
+  .resume-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(300px, 0.7fr);
+    gap: 28px;
+  }
+
+  h1 {
+    margin: 10px 0 16px;
+    font-size: clamp(42px, 8vw, 96px);
+    line-height: 0.9;
+    letter-spacing: -0.09em;
+    text-transform: uppercase;
+  }
+
+  .resume-panel {
+    padding: 22px;
+  }
+
+  h2 {
+    margin: 8px 0 12px;
+    font-size: 28px;
+    letter-spacing: -0.06em;
+    text-transform: uppercase;
+  }
+
+  .summary {
+    margin: 0 0 24px;
+    color: var(--muted);
+  }
+
+  ul {
+    margin: 16px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    border-top: 1px solid var(--border);
+    padding: 12px 0;
+    color: var(--muted);
+  }
+
+  a {
+    display: inline-flex;
+    margin-top: 18px;
+    border: 1px solid var(--border);
+    padding: 8px 10px;
+    color: var(--text);
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  a:hover {
+    background: var(--text);
+    color: var(--bg);
+  }
+
+  @media (max-width: 760px) {
+    .resume-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

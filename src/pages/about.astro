@@ -1,0 +1,98 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About | Homelab Platform Control Plane">
+  <section class="section page-hero">
+    <div class="shell about-grid">
+      <div>
+        <p class="eyebrow">/about</p>
+        <h1>Engineer Operating The Platform</h1>
+      </div>
+      <div class="panel about-copy">
+        <p class="terminal-label">operator</p>
+        <h2>Ruben Velazquez Flores</h2>
+        <p>
+          Software engineer with 5 years of experience building and operating software systems, now focused on
+          platform engineering, Kubernetes, infrastructure as code, cloud engineering, automation and observability.
+        </p>
+        <p>
+          The platform is the primary artifact: a public demonstration of how internal developer platforms are composed,
+          operated and observed using production-style practices. The goal is to show engineering judgment through a
+          running system: source-controlled infrastructure, GitOps delivery, observable workloads and repeatable
+          automation.
+        </p>
+        <a href="https://www.linkedin.com/in/rubenvelazquezflores" target="_blank" rel="noreferrer">View LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    min-height: calc(100vh - 64px);
+    border-top: 0;
+    padding-top: 72px;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(300px, 0.7fr);
+    gap: 28px;
+    align-items: start;
+  }
+
+  h1 {
+    margin: 10px 0 16px;
+    font-size: clamp(42px, 8vw, 96px);
+    line-height: 0.9;
+    letter-spacing: -0.09em;
+    text-transform: uppercase;
+  }
+
+  .about-copy {
+    padding: 22px;
+  }
+
+  h2 {
+    margin: 8px 0 16px;
+    color: var(--text);
+    font-size: 28px;
+    letter-spacing: -0.06em;
+    text-transform: uppercase;
+  }
+
+  .about-copy p {
+    margin: 0;
+    color: var(--muted);
+  }
+
+  .about-copy .terminal-label {
+    color: var(--dim);
+  }
+
+  .about-copy p + p {
+    margin-top: 16px;
+  }
+
+  .about-copy a {
+    display: inline-flex;
+    margin-top: 20px;
+    border: 1px solid var(--border);
+    padding: 8px 10px;
+    color: var(--text);
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  .about-copy a:hover {
+    background: var(--text);
+    color: var(--bg);
+  }
+
+  @media (max-width: 760px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

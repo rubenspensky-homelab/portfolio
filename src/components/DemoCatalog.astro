@@ -1,0 +1,138 @@
+---
+import { demos } from '@/data/platform';
+---
+
+<section class="section" id="demos">
+  <div class="shell">
+    <div class="section-header">
+      <div>
+        <p class="eyebrow">/demos</p>
+        <h2 class="section-title">Service Catalog</h2>
+      </div>
+      <p class="section-copy">
+        Public workloads and dashboards demonstrating how applications run on the platform, how telemetry is exposed,
+        and how infrastructure is managed from source control.
+      </p>
+    </div>
+    <div class="demo-list">
+      {demos.map((demo) => (
+        <article class="demo panel">
+          <div class="demo-main">
+            <p class="terminal-label">service: {demo.type}</p>
+            <h3>{demo.name}</h3>
+            <p>{demo.description}</p>
+            <div class="stack" aria-label="Technologies used">
+              {demo.stack.map((item) => <span>{item}</span>)}
+            </div>
+          </div>
+          <div class="demo-side">
+            <dl>
+              <div>
+                <dt>status</dt>
+                <dd><span class="status-dot"></span>{demo.status}</dd>
+              </div>
+              <div>
+                <dt>architecture</dt>
+                <dd>{demo.architecture}</dd>
+              </div>
+            </dl>
+            <div class="links">
+              {demo.links.map((link) => <a href={link.href} target="_blank" rel="noreferrer">{link.label}</a>)}
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .demo-list {
+    display: grid;
+    gap: 10px;
+  }
+
+  .demo {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 0.65fr);
+    gap: 24px;
+    padding: 18px;
+  }
+
+  h3 {
+    margin: 8px 0 10px;
+    font-size: clamp(22px, 3vw, 34px);
+    line-height: 1;
+    letter-spacing: -0.07em;
+    text-transform: uppercase;
+  }
+
+  p:not(.terminal-label) {
+    max-width: 760px;
+    margin: 0;
+    color: var(--muted);
+  }
+
+  .stack,
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .stack {
+    margin-top: 20px;
+  }
+
+  .stack span,
+  .links a {
+    border: 1px solid var(--border);
+    padding: 6px 8px;
+    font-size: 11px;
+    text-transform: uppercase;
+  }
+
+  .stack span {
+    color: var(--muted);
+  }
+
+  .links {
+    margin-top: 16px;
+  }
+
+  .links a:hover {
+    background: var(--text);
+    color: var(--bg);
+  }
+
+  dl {
+    margin: 0;
+  }
+
+  dl div {
+    border-bottom: 1px solid var(--border);
+    padding: 0 0 12px;
+    margin-bottom: 12px;
+  }
+
+  dt,
+  dd {
+    margin: 0;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  dt {
+    color: var(--dim);
+  }
+
+  dd {
+    color: var(--text);
+  }
+
+  @media (max-width: 760px) {
+    .demo {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

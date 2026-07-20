@@ -1,0 +1,45 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Blog | Homelab Platform Control Plane">
+  <section class="section page-hero">
+    <div class="shell">
+      <p class="eyebrow">/blog</p>
+      <h1>Engineering Notes</h1>
+      <div class="panel empty-state">
+        <p>Runbooks, incident notes and platform build logs will live here.</p>
+        <span>status: backlog</span>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    min-height: calc(100vh - 64px);
+    border-top: 0;
+    padding-top: 72px;
+  }
+
+  h1 {
+    margin: 10px 0 24px;
+    font-size: clamp(42px, 8vw, 96px);
+    line-height: 0.9;
+    letter-spacing: -0.09em;
+    text-transform: uppercase;
+  }
+
+  .empty-state {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 22px;
+    color: var(--muted);
+  }
+
+  span {
+    color: var(--dim);
+    text-transform: uppercase;
+  }
+</style>

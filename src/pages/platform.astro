@@ -1,0 +1,43 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Capabilities from '@/components/Capabilities.astro';
+import StatusGrid from '@/components/StatusGrid.astro';
+import OperatorStrip from '@/components/OperatorStrip.astro';
+---
+
+<BaseLayout title="Platform | Homelab Platform Control Plane">
+  <section class="section page-hero">
+    <div class="shell">
+      <OperatorStrip />
+      <p class="eyebrow">/platform</p>
+      <h1>Platform Documentation</h1>
+      <p>
+        A personal platform engineering project owned and maintained by Ruben Velazquez Flores. The platform documents
+        a Kubernetes runtime, edge networking, observability, security, storage and automation surfaces as if it were an
+        internal developer platform from a real engineering organization.
+      </p>
+    </div>
+  </section>
+  <StatusGrid />
+  <Capabilities />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    border-top: 0;
+    padding-top: 72px;
+  }
+
+  h1 {
+    margin: 10px 0 16px;
+    font-size: clamp(42px, 8vw, 96px);
+    line-height: 0.9;
+    letter-spacing: -0.09em;
+    text-transform: uppercase;
+  }
+
+  p:not(.eyebrow) {
+    max-width: 760px;
+    color: var(--muted);
+  }
+</style>

@@ -1,0 +1,35 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import DemoCatalog from '@/components/DemoCatalog.astro';
+---
+
+<BaseLayout title="Demos | Homelab Platform Control Plane">
+  <section class="section page-hero">
+    <div class="shell">
+      <p class="eyebrow">/demos</p>
+      <h1>Public Service Catalog</h1>
+      <p>Demo workloads, public dashboards and source repositories that expose how the platform operates.</p>
+    </div>
+  </section>
+  <DemoCatalog />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    border-top: 0;
+    padding-top: 72px;
+  }
+
+  h1 {
+    margin: 10px 0 16px;
+    font-size: clamp(42px, 8vw, 96px);
+    line-height: 0.9;
+    letter-spacing: -0.09em;
+    text-transform: uppercase;
+  }
+
+  p:not(.eyebrow) {
+    max-width: 760px;
+    color: var(--muted);
+  }
+</style>

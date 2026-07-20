@@ -1,0 +1,57 @@
+<footer class="section footer">
+  <div class="shell footer-grid">
+    <div>
+      <p class="terminal-label">public platform documentation</p>
+      <p class="footer-title">Homelab Platform Control Plane</p>
+      <a href="https://www.linkedin.com/in/rubenvelazquezflores" target="_blank" rel="noreferrer">Ruben Velazquez Flores</a>
+    </div>
+    <p>
+      A production-style Kubernetes platform operated as a public demonstration of platform engineering,
+      infrastructure automation and observability practices.
+    </p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    padding-bottom: 36px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(280px, 1fr);
+    gap: 32px;
+    color: var(--muted);
+  }
+
+  .footer-title {
+    margin: 8px 0 0;
+    color: var(--text);
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+  }
+
+  a {
+    display: inline-flex;
+    margin-top: 12px;
+    color: var(--text);
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .footer p:last-child {
+    margin: 0;
+  }
+
+  @media (max-width: 760px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+  }
+</style>

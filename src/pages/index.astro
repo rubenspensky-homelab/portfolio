@@ -1,0 +1,83 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hero from '@/components/Hero.astro';
+import StatusGrid from '@/components/StatusGrid.astro';
+import Capabilities from '@/components/Capabilities.astro';
+import DemoCatalog from '@/components/DemoCatalog.astro';
+import ArchitectureFlow from '@/components/ArchitectureFlow.astro';
+---
+
+<BaseLayout>
+  <Hero />
+  <StatusGrid />
+  <Capabilities />
+  <DemoCatalog />
+  <ArchitectureFlow />
+  <section class="section" id="about">
+    <div class="shell about-panel panel">
+      <div>
+        <p class="eyebrow">/about-engineer</p>
+        <h2>Operator Profile</h2>
+      </div>
+      <div class="operator-copy">
+        <p>
+          Ruben Velazquez Flores is a software engineer with 5 years of experience building and operating software
+          systems. His current focus is platform engineering: Kubernetes, infrastructure as code, cloud automation,
+          GitOps and observability.
+        </p>
+        <p>
+          The platform is the primary artifact. It demonstrates how he designs, automates and operates infrastructure
+          as a production-style internal developer platform, not as a collection of isolated portfolio projects.
+        </p>
+        <a href="https://www.linkedin.com/in/rubenvelazquezflores" target="_blank" rel="noreferrer">LinkedIn Profile</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .about-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 0.75fr) minmax(280px, 1fr);
+    gap: 32px;
+    padding: 24px;
+  }
+
+  h2 {
+    margin: 8px 0 0;
+    font-size: clamp(30px, 5vw, 58px);
+    line-height: 0.95;
+    letter-spacing: -0.08em;
+    text-transform: uppercase;
+  }
+
+  .operator-copy p {
+    margin: 0;
+    color: var(--muted);
+  }
+
+  .operator-copy p + p {
+    margin-top: 14px;
+  }
+
+  .operator-copy a {
+    display: inline-flex;
+    margin-top: 18px;
+    border: 1px solid var(--border);
+    padding: 8px 10px;
+    color: var(--text);
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  .operator-copy a:hover {
+    background: var(--text);
+    color: var(--bg);
+  }
+
+  @media (max-width: 760px) {
+    .about-panel {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

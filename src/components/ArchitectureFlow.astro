@@ -1,0 +1,72 @@
+---
+import { architectureFlow } from '@/data/platform';
+---
+
+<section class="section" id="architecture">
+  <div class="shell">
+    <div class="section-header">
+      <div>
+        <p class="eyebrow">/architecture</p>
+        <h2 class="section-title">Delivery Path</h2>
+      </div>
+      <p class="section-copy">
+        A source-to-runtime view of the platform operating model: changes enter through GitHub, infrastructure is
+        reconciled through automation, and workloads emit signals into the observability stack.
+      </p>
+    </div>
+    <div class="flow panel">
+      {architectureFlow.map((node, index) => (
+        <div class="flow-row">
+          <span class="step">{String(index + 1).padStart(2, '0')}</span>
+          <strong>{node}</strong>
+          {index < architectureFlow.length - 1 && <span class="arrow">downstream</span>}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .flow {
+    padding: 1px;
+    background: var(--border);
+  }
+
+  .flow-row {
+    display: grid;
+    grid-template-columns: 64px minmax(0, 1fr) auto;
+    gap: 14px;
+    align-items: center;
+    min-height: 62px;
+    background: var(--surface);
+    padding: 0 18px;
+  }
+
+  .flow-row + .flow-row {
+    margin-top: 1px;
+  }
+
+  .step,
+  .arrow {
+    color: var(--dim);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  strong {
+    font-size: clamp(18px, 3vw, 30px);
+    letter-spacing: -0.06em;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 620px) {
+    .flow-row {
+      grid-template-columns: 44px minmax(0, 1fr);
+    }
+
+    .arrow {
+      grid-column: 2;
+    }
+  }
+</style>
